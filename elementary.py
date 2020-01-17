@@ -59,3 +59,40 @@ Output: the same as the second Input argument."""
 
 def bigger_price(limit: int, data: list) -> list:
     return list(reversed(sorted(data, key=lambda x: x.get('price'))[-limit:]))
+
+
+"""
+Input: An array of numbers , a tuple..
+Output: The list or tuple (but not a generator) sorted by absolute values in ascending order."""
+
+
+def abs_sort(numbers_array: tuple) -> list:
+    return sorted(numbers_array, key=lambda x: abs(x))
+
+
+"""At the input of your function are given 2 arguments: the text and the array of words the popularity of which you 
+need to determine. The words should be sought in all registers.
+Input: The text and the search words array.
+Output: The dictionary where the search words are the keys and values are the number of times when those words 
+are occurring in a given text."""
+
+
+def popular_words(text: str, words: list) -> dict:
+    res = text.lower().split()
+    return {wrd: res.count(wrd) for wrd in words}
+
+
+"""Given a list of numbers, you should find the sum of these numbers. Your solution should not contain any of the 
+banned words, even as a part of another word.
+The list of banned words are as follows:
+sum
+import
+for
+while
+reduce
+Input: A list of numbers.
+Output: The sum of numbers."""
+
+
+def restricted_sum(data):
+    return data[0] + restricted_sum(data[1:]) if data else 0
