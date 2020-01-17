@@ -59,5 +59,3 @@ Output: the same as the second Input argument."""
 
 def bigger_price(limit: int, data: list) -> list:
     return list(reversed(sorted(data, key=lambda x: x.get('price'))[-limit:]))
-
-
